@@ -39,15 +39,15 @@ export default function Landing() {
           <div className="flex items-center gap-3">
             <Link
               to="/dashboard"
-              className="text-white border border-white/40 px-4 py-2 rounded-lg text-sm font-semibold hover:bg-white/10 transition-colors"
-            >
-              Sign In
-            </Link>
-            <Link
-              to="/dashboard"
               className="bg-white text-sbu-red px-4 py-2 rounded-lg text-sm font-semibold hover:bg-gray-100 transition-colors"
             >
               Sign In with SBU NetID
+            </Link>
+            <Link
+              to="/dashboard"
+              className="text-white border border-white/40 px-4 py-2 rounded-lg text-sm font-semibold hover:bg-white/10 transition-colors"
+            >
+              Sign In
             </Link>
           </div>
         </div>

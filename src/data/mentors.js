@@ -218,7 +218,7 @@ export const mentees = [
     name: "Sarah Chen",
     role: "Mentee",
     major: "Computer Science",
-    year: "Freshman",
+    year: "Sophomore",
     avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Sarah",
     tags: ["Course Planning", "Internship Prep"],
     goals: ["Land a summer internship", "Build a project portfolio", "Learn data structures"],
@@ -242,12 +242,12 @@ export const currentUser = {
   name: "Sarah Chen",
   role: "Mentee",
   major: "Computer Science",
-  year: "Freshman",
+  year: "Sophomore",
   avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Sarah",
   email: "sarah.chen@stonybrook.edu",
   sbuId: "114012345",
   tags: ["Course Planning", "Internship Prep"],
   goals: ["Land a summer internship", "Build a project portfolio", "Learn data structures"],
   preferences: { major: "Computer Science", industry: "Technology", format: "Virtual" },
-  bio: "Freshman CS major at Stony Brook. Excited about web development and AI. Looking for guidance on course planning and internship preparation."
+  bio: "Sophomore CS major at Stony Brook. Excited about web development and AI. Looking for guidance on course planning and internship preparation."
 };

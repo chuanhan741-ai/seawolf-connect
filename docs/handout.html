@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Why Stony Brook Needs Seawolf Connect — Data Handout</title>
+<style>
+  :root {
+    --sbu-red: #990000;
+    --sbu-bright-red: #D52027;
+    --sbu-dark-red: #6B000D;
+    --sbu-navy: #002244;
+    --sbu-royal-blue: #00549A;
+    --sbu-dark-gray: #4B4B4B;
+    --sbu-medium-gray: #828282;
+    --sbu-light-gray: #BEBEBE;
+    --sbu-cream: #F8F2C5;
+    --bg-pain: #F2F2F2;
+    --bg-outcome: #FDF8DC;
+  }
+
+  @page { size: letter; margin: 0; }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html, body { width: 8.5in; height: 11in; }
+
+  body {
+    font-family: 'Calibri', 'Source Sans 3', 'Microsoft YaHei', 'PingFang SC', system-ui, sans-serif;
+    color: #111;
+    padding: 0.45in 0.5in;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    gap: 0.18in;
+  }
+
+  /* ===== Header ===== */
+  .header {
+    border-bottom: 3px solid var(--sbu-red);
+    padding-bottom: 0.13in;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 0.3in;
+  }
+
+  .header-left { flex: 1; }
+
+  h1 {
+    font-family: 'Merriweather', Georgia, serif;
+    font-size: 22pt;
+    font-weight: 700;
+    color: var(--sbu-dark-red);
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+  }
+
+  .subtitle {
+    font-size: 10pt;
+    font-style: italic;
+    color: var(--sbu-dark-gray);
+    margin-top: 4pt;
+  }
+
+  .meta {
+    text-align: right;
+    font-size: 8pt;
+    color: var(--sbu-medium-gray);
+    line-height: 1.4;
+    flex-shrink: 0;
+  }
+
+  .meta strong { color: var(--sbu-navy); }
+
+  .meta a { color: var(--sbu-royal-blue); text-decoration: none; }
+
+  /* ===== Column header band ===== */
+  .col-headers {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.12in;
+  }
+
+  .col-header {
+    text-align: center;
+    font-family: 'Merriweather', Georgia, serif;
+    font-size: 11pt;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 0.08in 0;
+    border-radius: 4pt;
+  }
+
+  .col-header.pain {
+    background: var(--sbu-dark-gray);
+    color: white;
+  }
+
+  .col-header.outcome {
+    background: var(--sbu-red);
+    color: white;
+  }
+
+  .col-header .small {
+    display: block;
+    font-size: 7.5pt;
+    font-weight: 400;
+    text-transform: none;
+    letter-spacing: 0;
+    opacity: 0.85;
+    font-style: italic;
+    margin-top: 1pt;
+  }
+
+  /* ===== Card grid ===== */
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    gap: 0.12in;
+    flex: 1;
+  }
+
+  .card {
+    border-radius: 6pt;
+    padding: 0.16in 0.18in;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    border: 1px solid rgba(0,0,0,0.06);
+  }
+
+  .card.pain {
+    background: var(--bg-pain);
+  }
+
+  .card.outcome {
+    background: var(--bg-outcome);
+    border: 1px solid rgba(153, 0, 0, 0.18);
+  }
+
+  .card-tag {
+    font-family: 'Calibri', sans-serif;
+    font-size: 7.5pt;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--sbu-medium-gray);
+  }
+
+  .card.outcome .card-tag {
+    color: var(--sbu-red);
+  }
+
+  .stat {
+    font-family: 'Merriweather', Georgia, serif;
+    font-size: 38pt;
+    font-weight: 700;
+    line-height: 1;
+    margin: 0.04in 0 0.05in;
+  }
+
+  .card.pain .stat { color: var(--sbu-dark-red); }
+  .card.outcome .stat { color: var(--sbu-red); }
+
+  .card-text {
+    font-size: 9.5pt;
+    line-height: 1.32;
+    color: #1a1a1a;
+  }
+
+  .card-text em { color: var(--sbu-dark-gray); }
+
+  .card-source {
+    font-size: 7pt;
+    color: var(--sbu-medium-gray);
+    margin-top: 0.06in;
+    font-style: italic;
+  }
+
+  .card-source sup {
+    color: var(--sbu-red);
+    font-weight: 700;
+    font-style: normal;
+    margin-right: 2pt;
+  }
+
+  /* ===== Sarah callout strip between rows is omitted (kept compact) ===== */
+
+  /* ===== Footer / Sources ===== */
+  .footer {
+    border-top: 1.5px solid var(--sbu-light-gray);
+    padding-top: 0.08in;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.04in 0.18in;
+    font-size: 6.8pt;
+    line-height: 1.35;
+    color: var(--sbu-dark-gray);
+  }
+
+  .footer-title {
+    grid-column: 1 / -1;
+    font-family: 'Merriweather', Georgia, serif;
+    font-size: 8.5pt;
+    font-weight: 700;
+    color: var(--sbu-navy);
+    margin-bottom: 0.02in;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  .footer .ref {
+    display: flex;
+    gap: 4pt;
+  }
+
+  .footer .ref-num {
+    color: var(--sbu-red);
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  /* ===== Print rules ===== */
+  @media print {
+    html, body { width: 8.5in; height: 11in; }
+    body { padding: 0.4in 0.45in; }
+    .card { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .col-header { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header class="header">
+  <div class="header-left">
+    <h1>Why Stony Brook Needs Seawolf Connect</h1>
+    <div class="subtitle">Sarah Chen's story is not unique — here's the data behind the sophomore slump.</div>
+  </div>
+  <div class="meta">
+    <div><strong>Group 3 · CSE 300</strong></div>
+    <div>Spring 2026</div>
+    <div><a href="https://seawolf-connect.vercel.app">seawolf-connect.vercel.app</a></div>
+  </div>
+</header>
+
+<!-- ===== Column headers ===== -->
+<div class="col-headers">
+  <div class="col-header pain">
+    Without a Mentor
+    <span class="small">Where Sarah was last year</span>
+  </div>
+  <div class="col-header outcome">
+    With Seawolf Connect
+    <span class="small">Where mentorship can take her</span>
+  </div>
+</div>
+
+<!-- ===== Card grid ===== -->
+<div class="grid">
+
+  <!-- Row 1 — Mental State / Wellbeing -->
+  <div class="card pain">
+    <div>
+      <div class="card-tag">Academic Mental Health</div>
+      <div class="stat">38%</div>
+      <div class="card-text">
+        of U.S. undergraduates reported <strong>moderate or severe depression symptoms</strong> in the 2023&ndash;24 academic year — still above pre-pandemic levels.
+      </div>
+    </div>
+    <div class="card-source"><sup>1</sup> Healthy Minds Study, 2023&ndash;24 National Data Report</div>
+  </div>
+
+  <div class="card outcome">
+    <div>
+      <div class="card-tag">Persistence Through Crisis</div>
+      <div class="stat">4×</div>
+      <div class="card-text">
+        Without a peer mentor, students are <strong>four times more likely</strong> to <em>seriously consider leaving university</em> during their first year.
+      </div>
+    </div>
+    <div class="card-source"><sup>2</sup> Collings, Swanson &amp; Watkins (2014) &mdash; cited in our deck</div>
+  </div>
+
+  <!-- Row 2 — Career / Networking -->
+  <div class="card pain">
+    <div>
+      <div class="card-tag">Internship Gap</div>
+      <div class="stat">33%</div>
+      <div class="card-text">
+        of the U.S. <strong>Class of 2024</strong> graduated <em>without ever doing a single internship</em> &mdash; the gap is wider for first-gen and underrepresented students.
+      </div>
+    </div>
+    <div class="card-source"><sup>3</sup> NACE 2024 Student Survey</div>
+  </div>
+
+  <div class="card outcome">
+    <div>
+      <div class="card-tag">Long-Term Career Outcomes</div>
+      <div class="stat">2×</div>
+      <div class="card-text">
+        Alumni who had a college mentor are <strong>twice as likely</strong> to feel engaged in their work and life after graduation.
+      </div>
+    </div>
+    <div class="card-source"><sup>4</sup> 2018 Strada–Gallup Alumni Survey</div>
+  </div>
+
+  <!-- Row 3 — Strategy / Persistence -->
+  <div class="card pain">
+    <div>
+      <div class="card-tag">Major Uncertainty</div>
+      <div class="stat">~30%</div>
+      <div class="card-text">
+        of bachelor's-track undergraduates <strong>change their major</strong> at least once within 3 years &mdash; for math majors, the rate climbs to 52%.
+      </div>
+    </div>
+    <div class="card-source"><sup>5</sup> NCES BPS:12/14, "Beginning College Students Who Change Their Majors Within 3 Years" (2018)</div>
+  </div>
+
+  <div class="card outcome">
+    <div>
+      <div class="card-tag">Retention Lift</div>
+      <div class="stat">+14.5<span style="font-size:18pt;">pp</span></div>
+      <div class="card-text">
+        First-year students enrolled in a peer mentoring program saw a <strong>14.5 percentage-point gain</strong> in second-year retention vs. non-mentored peers.
+      </div>
+    </div>
+    <div class="card-source"><sup>6</sup> Peer Mentor Pilot, reported by <em>Inside Higher Ed</em> (2024)</div>
+  </div>
+
+</div>
+
+<!-- ===== FOOTER / Sources ===== -->
+<footer class="footer">
+  <div class="footer-title">Sources</div>
+
+  <div class="ref"><span class="ref-num">[1]</span><span>Healthy Minds Network. (2025). <em>The Healthy Minds Study, 2023–24 National Data Report.</em> University of Michigan School of Public Health. healthymindsnetwork.org</span></div>
+
+  <div class="ref"><span class="ref-num">[2]</span><span>Collings, R., Swanson, V., &amp; Watkins, R. (2014). The impact of peer mentoring on student wellbeing, integration and retention. <em>Higher Education, 68</em>(6), 927–942.</span></div>
+
+  <div class="ref"><span class="ref-num">[3]</span><span>National Association of Colleges and Employers. (2024). <em>2024 Student Survey: First-Destination Outcomes &amp; Internship Participation.</em> naceweb.org</span></div>
+
+  <div class="ref"><span class="ref-num">[4]</span><span>Strada Education Network &amp; Gallup. (2018). <em>Mentoring College Students to Success.</em> 2018 Strada-Gallup Alumni Survey, Year 4 Report.</span></div>
+
+  <div class="ref"><span class="ref-num">[5]</span><span>U.S. Department of Education, NCES. (2018). <em>Beginning College Students Who Change Their Majors Within 3 Years of Enrollment</em> (Data Point NCES 2018-434), based on BPS:12/14.</span></div>
+
+  <div class="ref"><span class="ref-num">[6]</span><span>Flaherty, C. (2024). Peer mentors aid in college retention efforts. <em>Inside Higher Ed</em>, July 16, 2024 — reporting on a matched-control peer mentoring pilot.</span></div>
+</footer>
+
+</body>
+</html>
